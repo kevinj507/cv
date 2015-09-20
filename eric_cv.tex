@@ -1,0 +1,76 @@
+\documentclass[10pt,colorlinks=true,urlcolor=blue]{moderncv}
+\usepackage{utopia}
+\moderncvtheme[blue]{classic}
+\usepackage[utf8]{inputenc}
+\usepackage[resetlabels]{multibib}
+\newcites{pre,pres}{%
+ , % Pre-prints
+  % Posters
+}
+\renewcommand{\bibliographyitemlabel}{\@{\arabic{enumiv}}}
+
+\usepackage[scale=0.8]{geometry}
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvline{}{}{%
+    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}%
+    }%
+}
+%
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optxional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+  \AtBeginDocument{\recomputelengths} 
+  \firstname{Eric W.~}
+  \familyname{Bridgeford} 
+  \address{3900, North Charles Street, Apt 516}{Baltimore, MD 21218} 
+  \email{ericwb95@gmail.com}
+  \homepage{ericwb.me}
+\begin{document}
+\maketitle
+
+\section{Work Experience}
+\cventry{08/14 -- present}{Research Assistant under Dr. Joshua T. Vogelstein}{Dept of Biomedical Engineering, Johns Hopkins University}{}{}{}
+\cventry{05/14 -- present}{Research Assistant under Dr. Dani S. Bassett}{Dept of Bioengineering, University of Pennsylvania}{}{}{}
+
+
+\section{Education}
+\cventry{2013 -- present}{B.S. in Biomedical Engineering and Computer Sceince}{\newline Johns Hopkins University}{Baltimore, MD 21218}{}{}
+\cventry{2009 -- 2013}{High School}{\newline La Salle College High School}{Wyndmoor, PA, 19038}{}{}
+
+\section{Awards \& Honors}
+\cventry{2015}{Everyblock API Award}{Pennapps}{}{}{}
+\cventry{2015}{Dean's List}{Johns Hopkins University}{}{}{}
+
+
+\section{Under Review Pre-Prints}
+\vspace{-15pt}
+\nocitepre{Muldoon2015}
+\bibliographystylepre{unsrtinit}
+\bibliographypre{eric}
+
+\section{Poster Presentations}
+\vspace{-15pt}
+\nocitepres{Kiar2015p1,Bridgeford2015,Kiar2014p1}
+\bibliographystylepres{unsrtinit}
+\bibliographypres{eric}
+
+\section{Languages}
+\cventry{Proficient}{Java, C++, C, Python,  Matlab, HTML, LaTeX}{}{}{}{}
+\cventry{Works in progress}{R, Javascript, CSS}{}{}{}{}
+
+\end{document}
+~
