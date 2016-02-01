@@ -3,9 +3,10 @@
 \moderncvtheme[blue]{classic}
 \usepackage[utf8]{inputenc}
 \usepackage[resetlabels]{multibib}
-\newcites{pre,pres}{%
+\newcites{pre,pres,talks}{%
  , % Pre-prints
-  % Posters
+ ,  % Posters
+ % Talks
 }
 \renewcommand{\bibliographyitemlabel}{\@{\arabic{enumiv}}}
 
@@ -65,9 +66,15 @@
 
 \section{Poster Presentations}
 \vspace{-15pt}
-\nocitepres{Muldoon2015,Kiar2015p1,Bridgeford2015,Kiar2014p1}
+\nocitepres{Muldoon2015p1,Kiar2015p1,Bridgeford2015,Kiar2014p1}
 \bibliographystylepres{unsrtinit}
 \bibliographypres{eric}
+
+\section{Talks}
+\vspace{-15pt}
+\nocitetalks{Bridgeford2016}
+\bibliographystyletalks{unsrtinit}
+\bibliographytalks{eric}
 
 \section{Languages}
 \cventry{Proficient}{Java, UNIX, R, Python, Matlab, HTML, LaTeX, SQL, C, C++}{}{}{}{}
