@@ -4,7 +4,7 @@ TEX = eric_cv
 BIBTEX = bibtex
 
 default: $(TEX).tex 
-	$(LATEX) $(TEX); $(BIBTEX) other.aux; $(BIBTEX) pre.aux; $(BIBTEX) pres.aux; $(BIBTEX) talks.aux; $(LATEX) $(TEX); $(LATEX) $(TEX);
+	$(LATEX) $(TEX); $(BIBTEX) other.aux;$(BIBTEX) acc.aux; $(BIBTEX) pre.aux; $(BIBTEX) pres.aux; $(BIBTEX) talks.aux; $(LATEX) $(TEX); $(LATEX) $(TEX);
 	$(RM) -f  *.blg *.dvi *.log *.toc *.lof *.lot *.cb *.bbl *.brf *.out *.aux $(TEX).ps 
 	gnome-open $(TEX).pdf &
 
