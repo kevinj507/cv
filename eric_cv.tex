@@ -3,7 +3,8 @@
 \moderncvtheme[blue]{classic}
 \usepackage[utf8]{inputenc}
 \usepackage[resetlabels]{multibib}
-\newcites{acc,pres,talks}{%
+\newcites{prep,acc,pres,talks}{%
+ , % Preprints
  , % Accepted
  ,  % Posters
  % Talks
@@ -40,23 +41,29 @@
   \address{3900, North Charles Street, Apt 516}{Baltimore, MD 21218} 
   \email{ericwb95@gmail.com}
   \homepage{ericwb.me}
+  \social[github]{ebridge2}
+
 \begin{document}
 \maketitle
 
-\section{Work Experience}
-\cventry{08/14 -- present}{Research Assistant under Dr. Joshua T. Vogelstein}{Dept of Biomedical Engineering, Johns Hopkins University}{}{}{}
-\cventry{05/14 -- present}{Research Assistant under Dr. Dani S. Bassett}{Dept of Bioengineering, University of Pennsylvania}{}{}{}
-
+\section{Research Experience}
+\cventry{08/14 -- present}{Research Assistant under Dr. Joshua T. Vogelstein}{}{\newline Dept of Biomedical Engineering, Johns Hopkins University}{}{}
+\cventry{05/14 -- present}{Research Assistant under Dr. Dani S. Bassett}{}{\newline Dept of Bioengineering, University of Pennsylvania}{}{}
 
 \section{Education}
-\cventry{2013 -- present}{B.S. in Biomedical Engineering and Computer Science}{\newline Johns Hopkins University}{Baltimore, MD 21218}{}{}
+\cventry{2013 -- present}{B.S. in Biomedical Engineering and Computer Science}{\newline Minor in Applied Mathematics and Statistics}{\newline Johns Hopkins University}{Baltimore, MD 21218}{}
 \cventry{2009 -- 2013}{High School}{\newline La Salle College High School}{Wyndmoor, PA, 19038}{}{}
 
 \section{Awards \& Honors}
+\cventry{2015 -- present}{Dean's List}{Johns Hopkins University}{}{}{}
+\cventry{2014 -- present}{Martha A. Laverty Scholarship}{Johns Hopkins University}{}{}{}
 \cventry{2015}{Everyblock API Award}{Pennapps}{}{}{}
-\cventry{2015 spring}{Dean's List}{Johns Hopkins University}{}{}{}
-\cventry{2015 fall}{Dean's List}{Johns Hopkins University}{}{}{}
 
+\section{Works in Progress}
+\vspace{-15pt}
+\nociteprep{Wang2016, Kiar2016, tGMM, Bridgeford2016a, Bridgeford2016b}
+\bibliographystyleprep{unsrtinit}
+\bibliographyprep{eric}
 
 \section{Accepted Manuscripts}
 \vspace{-15pt}
@@ -76,9 +83,15 @@
 \bibliographystyletalks{unsrtinit}
 \bibliographytalks{eric}
 
+\section{Organizations}
+\cventry{08/2014 -- present}{\href{neurodata.io}{Neurodata} (formerly Open Connectome Project)}{}{}{\newline Design Team Leader, 05/2016 - present}{}
+\cventry{01/2009 -- present}{Hatboro YMCA Special Olympics}{}{}{\newline Head Male Gymnastics Coach, 03/2011 - 05/2014}{}
+\cventry{04/2014 -- present}{Sigma Chi Fraternity}{$\kappa \upsilon$ Chapter}{}{\newline Chapter Risk Manager, 09/2014 - 05/2015}{}
+
 \section{Languages}
-\cventry{Proficient}{Java, UNIX, R, Python, Matlab, HTML, LaTeX, SQL, C, C++}{}{}{}{}
-\cventry{Improficient}{Javascript, CSS}{}{}{}{}
+\cventry{Proficient}{UNIX, R, Python, Java, LaTeX, Matlab, HTML, SQL, C, C++}{}{}{}{}
+\cventry{Basic}{Javascript, CSS}{}{}{}{}
 \cventry{Tools}{Git, EC2, S3, Eclipse, Vim, Android Studio, Adobe Creative Cloud}{}{}{}{}
+
 \end{document}
 ~
