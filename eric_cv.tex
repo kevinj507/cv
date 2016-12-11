@@ -1,97 +1,185 @@
-\documentclass[10pt,colorlinks=true,urlcolor=blue]{moderncv}
-\usepackage{utopia}
-\moderncvtheme[blue]{classic}
-\usepackage[utf8]{inputenc}
-\usepackage[resetlabels]{multibib}
-\newcites{prep,acc,pres,talks}{%
- , % Preprints
- , % Accepted
- ,  % Posters
- % Talks
-}
-\renewcommand{\bibliographyitemlabel}{\@{\arabic{enumiv}}}
-
-\usepackage[scale=0.8]{geometry}
-\newcommand{\cvdoublecolumn}[2]{%
-  \cvline{}{}{%
-    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#1\end{minipage}%
-    \hfill%
-    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}%
-    }%
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.2 (3/5/15)
 %
-% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
-% Everything but the name is optxional
-% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
-% (Per default, \addresssymbol isn't specified, the other two are specified.)
-% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\cvreference}[7]{%
-    \textbf{#1}\newline% Name
-    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
-    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
-    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
-    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
-    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
-    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
 
-  \AtBeginDocument{\recomputelengths} 
-  \firstname{Eric W.~}
-  \familyname{Bridgeford} 
-  \address{3900, North Charles Street, Apt 516}{Baltimore, MD 21218} 
-  \email{ericwb95@gmail.com}
-  \homepage{ericwb.me}
-  \social[github]{ebridge2}
+\addbibresource{eric.bib} % Specify the bibliography file to include publications
 
 \begin{document}
-\maketitle
 
-\section{Research Experience}
-\cventry{08/14 -- present}{Research Assistant under Dr. Joshua T. Vogelstein}{}{\newline Dept of Biomedical Engineering, Johns Hopkins University}{}{}
-\cventry{05/14 -- present}{Research Assistant under Dr. Dani S. Bassett}{}{\newline Dept of Bioengineering, University of Pennsylvania}{}{}
+\header{Eric}{Bridgeford}{Biomedical Engineer and Computer Scientist} % Your name and current job title/field
 
-\section{Education}
-\cventry{2013 -- present}{B.S. in Biomedical Engineering and Computer Science}{\newline Minor in Applied Mathematics and Statistics}{\newline Johns Hopkins University}{Baltimore, MD 21218}{}
-\cventry{2009 -- 2013}{High School}{\newline La Salle College High School}{Wyndmoor, PA, 19038}{}{}
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
 
-\section{Awards \& Honors}
-\cventry{2015 -- present}{Dean's List}{Johns Hopkins University}{}{}{}
-\cventry{2014 -- present}{Martha A. Laverty Scholarship}{Johns Hopkins University}{}{}{}
-\cventry{2015}{Everyblock API Award}{Pennapps}{}{}{}
+\begin{aside} % In the aside, each new line forces a line break
+\section{contact}
+3900 N Charles Street
+Apt 516
+Baltimore, MD
+21218, USA
+~
++1 (267) 253 8797~{\color{green} \faMobilePhone}
+~
+\href{mailto:ebridge2@jhu.edu}{ebridge2@jhu.edu~{\color{red} \faEnvelope}}
+\href{http://ericwb.me}{ericwb.me~{\color{brown} \faGlobe}}
+\href{http://github.com/ebridge2}{ebridge2~{\color{purple} \faGithub}}
+\href{https://www.linkedin.com/im/ericwb95}{ericwb95~{\color{blue} \faLinkedin}}
+\section{languages}
+English, basic French
+\section{programming}
+Python, R, UNIX {\color{red} $\varheartsuit$}
+Java, Matlab, SQL
+C++, C
+Javascript, CSS \& HTML
+\section{tools}
+Django, FSL, Git
+Docker, EC2, S3
+Android
+\section{soft skills}
+leadership, design, problem~solving
+\end{aside}
 
-\section{Works in Progress}
-\vspace{-15pt}
-\nociteprep{Wang2016, Kiar2016, tGMM, Bridgeford2016a, Bridgeford2016b}
-\bibliographystyleprep{unsrtinit}
-\bibliographyprep{eric}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
 
-\section{Accepted Manuscripts}
-\vspace{-15pt}
-\nociteacc{Muldoon2016}
-\bibliographystyleacc{unsrtinit}
-\bibliographyacc{eric}
+\section{education}
 
-\section{Poster Presentations}
-\vspace{-15pt}
-\nocitepres{Muldoon2015p1,Kiar2015p1,Bridgeford2015,Kiar2014p1}
-\bibliographystylepres{unsrtinit}
-\bibliographypres{eric}
+\begin{entrylist}
 
-\section{Talks}
-\vspace{-15pt}
-\nocitetalks{Bridgeford2016}
-\bibliographystyletalks{unsrtinit}
-\bibliographytalks{eric}
+%------------------------------------------------
 
-\section{Organizations}
-\cventry{08/2014 -- present}{\href{neurodata.io}{Neurodata} (formerly Open Connectome Project)}{}{}{\newline Design Team Leader, 05/2016 - present}{}
-\cventry{01/2009 -- present}{Hatboro YMCA Special Olympics}{}{}{\newline Head Male Gymnastics Coach, 03/2011 - 05/2014}{}
-\cventry{04/2014 -- present}{Sigma Chi Fraternity}{$\kappa \upsilon$ Chapter}{}{\newline Chapter Risk Manager, 09/2014 - 05/2015}{}
+\entry
+{2013 -- 2017}
+{B.S. {\normalfont in Biomedical Engineering and Computer Science\\ minor in Applied Mathematics and Statistics}}
+{Johns Hopkins University, Baltimore, MD}
+{Thesis work supervised by Dr. Joshua T. Vogelstein on project entitled: \\Functional Neurodata Graphs Service: a One-Click Pipeline for the Reliable Estimation of Functional Connectomes.}
 
-\section{Languages}
-\cventry{Proficient}{UNIX, R, Python, Java, LaTeX, Matlab, HTML, SQL, C, C++}{}{}{}{}
-\cventry{Basic}{Javascript, CSS}{}{}{}{}
-\cventry{Tools}{Git, Docker, Django, EC2, S3, Eclipse, Vim, Android Studio, Adobe Creative Cloud}{}{}{}{}
+%------------------------------------------------
+
+\entry
+{2009 -- 2013}
+{High School {\normalfont La Salle College High School}}
+{Wyndmoor, PA}
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{experience}
+
+\subsection{Academic Experience}
+
+\subsubsection{}{Positions}
+
+\begin{entrylist}
+\entry
+{08/14 -- now}
+{Center for Imaging Science, Johns Hopkins University}
+{Baltimore, MD}
+{\job{Undergraduate Researcher} under Joshua T. Vogelstein\\
+Design and implementation of an open-source fMRI pipeline for robust one-click analysis. Development of extensive quality multi-modal MR quality control suite. Statistical work focusing on making inferences from fMRI connectomes.}
+
+\entry
+{05/14 -- 02/16}
+{Complex Systems Group, University of Pennsylvania}
+{Philadelphia, PA}
+{\job{Undergraduate Researcher} under Danielle S. Bassett\\
+Assisted in the development of novel network theory statistics to compare network performance. Publicly available code for assessing small world propensity in weighted, real world networks, a statistic that improves the robustness and scaling of measures of small worldness.}
+
+\end{entrylist}
+
+\subsection{Organizations and Volunteer Work}
+
+\begin{entrylist}
+\entry
+{03/08 -- now}
+{Special Olympics Male Gymnastics Coach, Hatboro YMCA}
+{Hatboro, PA}
+{Volunteer to mentor \& coach special needs gymnasts. Head male gymnastics coach from 03/2011 -- 05/14.}
+
+\entry
+{04/14 -- present}
+{Sigma Chi Fraternity, $\Kappa\Upsilon$ Chapter}
+{Baltimore, MD}
+{Chapter Risk manager from 09/14 -- 05/15.}
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{awards}
+
+\begin{entrylist}
+\entry
+{09/14 -- now}
+{Martha A. Laverty Scholarship}
+{Johns Hopkins University, Baltimore, MD}
+{Grant awarded for merit achievement.}
+
+\entry
+{05/15 -- now}
+{Dean's List}
+{Johns Hopkins University, Baltimore, MD}
+{Awarded for maintaining a GPA above a 3.5/4.0.}
+
+\entry
+{09/15}
+{Everyblock API Award}
+{University of Pennsylvania Pennapps, Philadelphia, PA}
+{Awarded for the best application making use of the Everyblock API for app StrollSafe.}
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{interests}
+
+\textbf{professional:} pipeling engineering, cloud computing, data analysis, neuroscience, reproducibility, timeseries analysis.\\
+\textbf{personal:} guitar, cooking, design, animals, hiking, biking, scale model warships.
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{publications}
+
+\printbibsection{manual}{under review pre-prints} % Print all articles from the bibliography
+
+\printbibsection{article}{articles in peer-reviewed journals} % Print all articles from the bibliography
+
+\printbibsection{proceedings}{posters at international conferences} % Print all miscellaneous entries from the bibliography
+
+\printbibsection{report}{works in progress} % Print all research reports from the bibliography
+
+\printbibsection{misc}{talks} % Print all miscellaneous entries from the bibliography
+%----------------------------------------------------------------------------------------
 
 \end{document}
-~
