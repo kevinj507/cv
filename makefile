@@ -8,7 +8,7 @@ default: $(TEX).tex
 	open $(TEX).pdf &
 
 clean:
-	$(RM) -f *.aux *.blg *.dvi *.log *.toc *.lof *.lot *.cb *.bbl $(TEX).ps *~;
+	$(RM) -f *.aux *.blg *.dvi *.log *.toc *.lof *.lot *.cb *.bbl *.out *.xml *.bcf  $(TEX).ps *~;
 
 check:
 	@echo "Passing the check will cause make to report Error 1.";
